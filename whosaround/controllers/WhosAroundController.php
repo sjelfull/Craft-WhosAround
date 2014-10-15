@@ -61,7 +61,7 @@ class WhosAroundController extends BaseController
 
     public function getSettings()
     {
-        $plugin = craft()->plugins->getPlugin('sitemap');
+        $plugin = craft()->plugins->getPlugin('whosaround');
 
         return $plugin->getSettings();
     }
