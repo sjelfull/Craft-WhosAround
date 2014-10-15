@@ -1,0 +1,46 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    label: 'Client API Key',
+    instructions: 'Pusher.com API key',
+    id:     'pusherClientKey',
+    name:   'pusherClientKey',
+    value:  settings.pusherClientKey,
+    errors: "",
+}) }}
+
+{{ forms.textField({
+label: 'Client API Secret',
+instructions: 'Pusher.com API secret',
+id:     'pusherClientSecret',
+name:   'pusherClientSecret',
+value:  settings.pusherClientSecret,
+errors: "",
+}) }}
+
+{{ forms.textField({
+label: 'Client App ID',
+instructions: 'Pusher.com App ID',
+id:     'pusherAppId',
+name:   'pusherAppId',
+value:  settings.pusherAppId,
+errors: "",
+}) }}
+
+{{ forms.textField({
+label: 'Channel name',
+instructions: 'Pusher.com channel name (Automatically prefixed with presence-)',
+id:     'pusherChannelName',
+name:   'pusherChannelName',
+value:  settings.pusherChannelName,
+errors: "",
+}) }}
+
+{# {{ forms.lightswitchField({
+    label: 'Generate on load',
+    instructions: 'Auto-generate if field is empty',
+    id:     'autoGenerateIfEmpty',
+    name:   'autoGenerateIfEmpty',
+    on:  (settings.autoGenerateIfEmpty is defined and settings.autoGenerateIfEmpty) ? true : false,
+    errors: "",
+}) }} #}

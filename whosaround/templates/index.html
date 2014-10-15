@@ -1,0 +1,22 @@
+{% extends "_layouts/cp" %}
+{% import "_includes/forms" as forms %}
+{% set title = "Who's around"|t %}
+
+{% set content %}
+
+        <div><span id="whosaround-count">0</span> users online</div>
+        <!-- /#whosaround-count -->
+        <div class="" id="whosaround-list">
+            <h1>Users</h1>
+        </div>
+        <!-- /.pagespeed__chart -->
+
+        {% includeJsFile "//js.pusher.com/2.2/pusher.min.js" %}
+        {% includeJsResource "whosaround/whosaround.js" %}
+
+        <script>
+            window.whosAroundSettings = {};
+            window.whosAroundSettings.publicKey = '{{ craft.whosAround.getPublicKey }}';
+            window.whosAroundSettings.channelName = '{{ craft.whosAround.getChannelName }}';
+        </script>
+{% endset %}

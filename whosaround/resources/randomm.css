@@ -1,0 +1,26 @@
+.randomm-trigger {
+    background-image: url(refresh.svg);
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    display: block;
+    width: 17px;
+    height: 17px;
+    text-indent: -9999em;
+    overflow: hidden;
+    opacity: 0.4;
+}
+
+.randomm-trigger:hover {
+    opacity: 1;
+}
+
+.randomm-input-wrapper {
+    position: relative;
+}
+
+.randomm-input-wrapper .randomm-trigger {
+    position: absolute;
+    right: 7px;
+    top: 9px;
+}
