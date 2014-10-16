@@ -21,7 +21,7 @@ class WhosAroundVariable
 
         craft()->path->setTemplatesPath($oldPath);
 
-        return $html;
+        return TemplateHelper::getRaw($html);
     }
 
     public function getPublicKey()
