@@ -30,7 +30,7 @@
         this.onlineCount = count;
 
         // Set count
-        $('#whosaround-count').text(this.onlineCount);
+        $('#js-whosaround-count').text(this.onlineCount);
 
         // Hide/show table if count is 0
         (count > 0) ? $('#js-whosaround-table').slideDown(250) : $('#js-whosaround-table').slideUp(250);
