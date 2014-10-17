@@ -1,0 +1,33 @@
+/*------------------------------------*\
+    $STATBOX
+\*------------------------------------*/
+
+.whosaround-statbox {
+    max-width: 150px;
+    padding: 10px;
+    border: 4px solid #eee;
+    margin: 10px 0;
+}
+
+.whosaround-statbox__number {
+    font-size: 40px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    line-height: 1.4;
+}
+.whosaround-statbox__description {
+    display: block;
+    text-align: center;
+}
+
+/*------------------------------------*\
+    $TABLE
+\*------------------------------------*/
+
+.whosaround-table {
+    margin-top: 25px;
+
+    /* Hidden by default */
+    display: none;
+}

@@ -24,10 +24,16 @@
     Whosaround.setOnlineCount = function () {
         var count = arguments[0];
 
+        // Check if count is set, or if it's larger than 0
         if (!count || count < 0) count = 0;
 
         this.onlineCount = count;
+
+        // Set count
         $('#whosaround-count').text(this.onlineCount);
+
+        // Hide/show table if count is 0
+        (count > 0) ? $('#js-whosaround-table').slideDown(250) : $('#js-whosaround-table').slideUp(250);
     }
 
     Whosaround.decreaseOnlineCount = function () {
@@ -41,14 +47,30 @@
     }
 
     Whosaround.addMember = function(member){
-            console.log(member);
+            // Default to 'No name'
             var name = 'No name';
+
+            // Set name if we got any
             if (member.info && member.info.name) name = member.info.name;
-            var p = $("<p/>", { text: name, id: "member_" + member.id } );
-            console.log(p);
             
+            // Create row            
+            var $row = $('<tr />', { id: "member_" + member.id });
+
+            // Set data to be added
+            var data = [ name, member.info.ip, member.info.username ];
+
+            // Add every data column
+            $(data).each(function(index, item)
+            {
+                var $td = $('<td />', { text: item }).attr('scope', 'row');
+                $row.append($td);
+            });
+
+            // Append row to table
+            $("#whosaround-list").append( $row );
+
+            // Increase online count            
             Whosaround.increaseOnlineCount();
-            $("#whosaround-list").append( p );
         }
         
     Whosaround.removeMember = function(member){
@@ -64,6 +86,8 @@
             window.console.log(message);
           }
         };
+
+        Whosaround.setOnlineCount();
 
         var pusher = new Pusher(this.publicKey);
         var channel = pusher.subscribe(this.channelName);

@@ -3,15 +3,31 @@
 {% set title = "Who's around"|t %}
 
 {% set content %}
+        <h1>Statistics</h1>
 
-        <div><span id="whosaround-count">0</span> users online</div>
-        <!-- /#whosaround-count -->
-        <div class="" id="whosaround-list">
-            <h1>Users</h1>
+        {# Online users count #}
+        <div class="whosaround-statbox">
+            <p><span class="whosaround-statbox__number" id="js-whosaround-count">0</span> <span class="whosaround-statbox__description">users online</span></p>
         </div>
-        <!-- /.pagespeed__chart -->
+        <!-- /#whosaround-count -->
 
-        {% includeJsFile "//js.pusher.com/2.2/pusher.min.js" %}
+        {# List over online users #}
+        <table class="data fullwidth whosaround-table" id="js-whosaround-table">
+            <thead>
+                <tr>
+                    <th scope="col" data-attribute="name">Name</th>
+                    <th scope="col" data-attribute="ip">IP address</th>
+                    <th scope="col" data-attribute="username">Username</th>
+                </tr>
+            </thead>
+            <tbody id="whosaround-list">
+                
+            </tbody>
+        </table>
+        <!-- /#whosaround-list -->
+
+        {% includeJsFile "//js.pusher.com/2.2/pusher.js" %}
+        {% includeCssResource "whosaround/whosaround.css" %}
         {% includeJsResource "whosaround/whosaround.js" %}
 
         <script>
