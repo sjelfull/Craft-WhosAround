@@ -25,19 +25,19 @@ class WhosAroundPlugin extends BasePlugin {
 
     public function getSettingsHtml()
     {
-        return craft()->templates->render('whosaround/_settings', [
+        return craft()->templates->render('whosaround/_settings', array(
            'settings' => $this->getSettings(),
-        ]);
+        ));
     }
     
     protected function defineSettings()
     {
-        return [
+        return array(
             'pusherClientKey' => AttributeType::String,
             'pusherClientSecret' => AttributeType::String,
             'pusherAppId' => AttributeType::String,
             'pusherChannelName' => AttributeType::String,
-        ];
+        );
     }
 
     public function hasCpSection()

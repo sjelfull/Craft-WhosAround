@@ -14,10 +14,10 @@ class WhosAroundVariable
         // Set path for this request
         craft()->path->setTemplatesPath($newPath);
 
-        $html = craft()->templates->render('_js', [
+        $html = craft()->templates->render('_js', array(
             'apiKey' => $apiKey,
             'channelName' => $channelName,
-        ]);
+        ));
 
         craft()->path->setTemplatesPath($oldPath);
 

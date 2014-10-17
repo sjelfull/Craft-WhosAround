@@ -5,7 +5,7 @@ require_once(CRAFT_PLUGINS_PATH . '/whosaround/vendor/autoload.php');
 
 class WhosAroundService extends BaseApplicationComponent {
 
-    protected $settings = [];
+    protected $settings = array();
     protected $pusher;
 
     function __construct()
@@ -24,7 +24,7 @@ class WhosAroundService extends BaseApplicationComponent {
     {
         // Check if user is logged in
         $user = craft()->userSession->getUser();
-        $data = [];
+        $data = array();
         // Should be registered in session instead of generated every time
         $userId = StringHelper::randomString(12);
 
